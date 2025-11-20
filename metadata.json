@@ -1,0 +1,5 @@
+{
+  "name": "Balloon Customizer AI",
+  "description": "An interactive web application to design personalized balloons. Users can choose shapes, colors, add text, upload images, and get creative ideas for messages and color palettes using Gemini AI.",
+  "requestFramePermissions": []
+}
