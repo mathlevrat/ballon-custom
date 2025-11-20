@@ -29,8 +29,10 @@ const PreviewPanel: React.FC<PreviewPanelProps> = ({ config }) => {
             </radialGradient>
           </defs>
           <g>
-            {React.cloneElement(SHAPE_PATHS[shape], { fill: color })}
-            {React.cloneElement(SHAPE_PATHS[shape], { fill: 'url(#balloonShine)' })}
+            {/* FIX: Explicitly specify the generic type for React.cloneElement to ensure SVG props like 'fill' are recognized. */}
+            {React.cloneElement<React.SVGProps<SVGElement>>(SHAPE_PATHS[shape], { fill: color })}
+            {/* FIX: Explicitly specify the generic type for React.cloneElement to ensure SVG props like 'fill' are recognized. */}
+            {React.cloneElement<React.SVGProps<SVGElement>>(SHAPE_PATHS[shape], { fill: 'url(#balloonShine)' })}
             
             {image.src && (
               <image
